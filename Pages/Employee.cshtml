@@ -1,0 +1,26 @@
+﻿@page
+
+@model EmployeeModel
+
+<h2>Employees</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Email</th>
+            <th>PhoneNumber</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var user in Model.Users)
+        {
+            <tr>
+
+                <td>@user.Email</td>
+                <td>@user.PhoneNumber</td>
+     
+            </tr>
+        }
+    </tbody>
+
+</table>

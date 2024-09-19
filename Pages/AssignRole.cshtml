@@ -1,0 +1,41 @@
+﻿@page
+@model RoleBasedAccessControl.Pages.AssignRoleModel
+@{
+}
+
+@if(TempData["Message"] is not null)
+{
+    <div class="alert alert-info text-center mx-auto col-sm-6" role="alert">
+       @TempData["Message"]
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+<div class="row">
+    <div class="col-sm-6 mx-auto rounded border p-3">
+        <form method="post">
+            <h2 class="text-center">Assign Role</h2>
+            <hr />
+            <div class="row mb-3">
+                <label class="col-sm-4 col-form-label">User Email:</label>
+                <div class="col-sm-8">
+                    <input class="form-control" asp-for="userEmail" required />
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label class="col-sm-4 col-form-label">Role Name:</label>
+                <div class="col-sm-8">
+                    <select class="col-sm-8 form-select" asp-for="SelectedRole" asp-items="Model.Roles" required>
+                    </select>
+                </div>
+            </div>
+
+            
+            <div class="text-center mt-4">
+                <button type="submit" class="btn btn-primary">Save</button>
+            </div>
+            
+        </form>
+    </div>
+</div>
