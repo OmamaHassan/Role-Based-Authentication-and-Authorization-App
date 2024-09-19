@@ -41,7 +41,7 @@ namespace RoleBasedAccessControl.Pages
                     var removeRole = await userManager.RemoveFromRoleAsync(user, role);
                 }
                 await userManager.AddToRoleAsync(user, SelectedRole);
-                TempData["Message"] = "Role \'" + SelectedRole + "\' Assigned To \'" + userEmail + "\'";
+                TempData["Message"] =$"Role '{ SelectedRole }' Assigned To '{ userEmail }'";
             }
 
             else
